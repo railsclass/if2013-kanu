@@ -2,7 +2,6 @@ Kanu::Application.routes.draw do
   resources :watercourses
 
   resources :spots
-get 'vote/:id' => 'spots#vote', as: :vote
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
