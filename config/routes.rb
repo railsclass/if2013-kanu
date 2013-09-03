@@ -1,4 +1,6 @@
 Kanu::Application.routes.draw do
+  resources :watercourses
+
   resources :spots
 
   # The priority is based upon order of creation: first created -> highest priority.
