@@ -1,0 +1,27 @@
+<h1>Listing watercourses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @watercourses.each do |watercourse| %>
+      <tr>
+        <td><%= watercourse.name %></td>
+        <td><%= link_to 'Show', watercourse %></td>
+        <td><%= link_to 'Edit', edit_watercourse_path(watercourse) %></td>
+        <td><%= link_to 'Destroy', watercourse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Watercourse', new_watercourse_path %>

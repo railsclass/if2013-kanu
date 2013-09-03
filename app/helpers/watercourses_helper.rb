@@ -1,0 +1,2 @@
+module WatercoursesHelper
+end
