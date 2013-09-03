@@ -10,6 +10,10 @@ class SpotsController < ApplicationController
   # GET /spots/1
   # GET /spots/1.json
   def show
+    if params[:upvote]
+      @spot.upvote
+      @spot.save
+    end
   end
 
   # GET /spots/new

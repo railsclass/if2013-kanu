@@ -1,5 +1,9 @@
 <p id="notice"><%= notice %></p>
-
+<%= link_to "+1" , spot_path(@spot, upvote: true)%>
+<p>
+  <strong>Votes:</strong>
+  <%= @spot.votes %>
+</p>
 <p>
   <strong>River:</strong>
   <%= @spot.river %>
