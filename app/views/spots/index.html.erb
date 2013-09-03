@@ -6,7 +6,10 @@
     <tr>
       <th>River</th>
       <th>Description</th>
-      <th>km</th>
+      <th><%= link_to "km", spots_path %>
+        <%= link_to "v", spots_path(sort: :asc)%>
+        <%= link_to "^", spots_path(sort: :desc)%>
+      </th>
       <th></th>
       <th></th>
       <th></th>

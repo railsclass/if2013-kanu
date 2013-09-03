@@ -4,7 +4,15 @@ class SpotsController < ApplicationController
   # GET /spots
   # GET /spots.json
   def index
-    @spots = Spot.all
+    if params["sort"]
+      if params["sort"] == "asc"
+        @spots = Spot.order("km ASC")
+      else
+        @spots = Spot.order("km DESC")
+      end
+    else
+      @spots = Spot.all
+    end
   end
 
   # GET /spots/1
