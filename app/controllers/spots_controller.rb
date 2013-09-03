@@ -4,7 +4,11 @@ class SpotsController < ApplicationController
   # GET /spots
   # GET /spots.json
   def index
-    @spots = Spot.all
+    if params[:search]
+      @spots = Spot.search(params[:search])
+    else
+      @spots = Spot.all
+    end
   end
 
   # GET /spots/1
