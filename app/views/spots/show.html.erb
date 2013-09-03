@@ -1,5 +1,11 @@
 <p id="notice"><%= notice %></p>
 
+<%= link_to "+1" , vote_path %>
+<p>
+  <strong>Votes:</strong>
+  <%= @spot.votes %>
+</p>
+
 <p>
   <strong>River:</strong>
   <%= @spot.river %>

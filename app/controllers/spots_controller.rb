@@ -1,5 +1,5 @@
 class SpotsController < ApplicationController
-  before_action :set_spot, only: [:show, :edit, :update, :destroy]
+  before_action :set_spot, only: [:show, :edit, :update, :destroy, :vote]
 
   # GET /spots
   # GET /spots.json
@@ -13,6 +13,16 @@ class SpotsController < ApplicationController
     else
       @spots = Spot.all
     end
+  end
+
+  def vote
+     @spot.votes ||= 0
+     @spot.votes += 1
+     @spot.save
+     respond_to do |format|
+       format.html { redirect_to @spot, notice: 'Spot was voted up.' }
+       format.json { render action: 'show', status: :created, location: @spot }
+     end
   end
 
   # GET /spots/1

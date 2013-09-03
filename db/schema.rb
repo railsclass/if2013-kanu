@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130902162312) do
+ActiveRecord::Schema.define(version: 20130903043638) do
 
   create_table "spots", force: true do |t|
     t.string   "river"
@@ -20,6 +20,7 @@ ActiveRecord::Schema.define(version: 20130902162312) do
     t.datetime "updated_at"
     t.integer  "km"
     t.integer  "watercourse_id"
+    t.integer  "votes"
   end
 
   create_table "watercourses", force: true do |t|
