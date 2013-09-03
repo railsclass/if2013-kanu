@@ -1,6 +1,13 @@
 <h1>Listing spots</h1>
 
 <p> We have <%= @spots.size %> Spots altogether</p>
+
+
+<%= form_tag spots_path, :method => :get do %>
+  <%= text_field_tag :search, params[:search] %>
+  <%= submit_tag "Search", :name => nil %>
+<% end %>
+
 <table>
   <thead>
     <tr>
